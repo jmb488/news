@@ -1,0 +1,59 @@
+body{
+    font-family: 'Work Sans';
+}
+
+div.homejumbo{
+    background-attachment: fixed;
+    background-color:whitesmoke;
+    background-size: cover;
+    color: dimgray;
+}
+
+button.ask{
+    color:dimgray;
+    border-color:dimgray;
+}
+
+button:hover{
+    color:whitesmoke;
+    background-color: white;
+}
+
+p.footertext{
+    font-size:small;
+    color:black;
+}
+
+
+h1.headline{
+    font-size:3rem;
+    font-family:'Roboto Mono';
+}
+
+
+h2{
+    font-size:2.5rem;
+    color:darkslategray;
+}
+
+a.newslink{
+    color:rgb(46, 171, 212);
+}
+
+img.newsimg{
+    max-width:100%;
+}
+
+div.weatherreport{
+    font-family: 'Muli';
+}
+
+
+i.fas{
+    color:steelblue;
+}
+
+
+p{
+    padding-top:0.5rem;
+}

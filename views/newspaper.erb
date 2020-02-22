@@ -7,7 +7,7 @@
 
     <!-- Google Fonts -->
     <!-- Swap out "Roboto" for the font(s) you want to use -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli|Roboto+Mono|Work+Sans&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" crossorigin="anonymous">
@@ -16,30 +16,76 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     
     <!-- Your own CSS -->
-    <link rel="stylesheet" href="views/styles.css">
+    <link rel="stylesheet" href="/styles.css">
 
     <title>Geocoding</title>
   </head>
   <body>
 
-    <div class="container mt-5">
-      <h1>Newspaper Output</h1>
+
+    <div class="jumbotron jumbotron-fluid homejumbo">
+        <div class="container">
+            <h1 class="headline">Local Weather and National News</h1>
+            <p></p>
+            <h2>Current weather in <%=@params["q"]%> <i class="fas fa-cloud-sun"></i></h2>
+            <p class="lead">Today's high temperature is <%=@current_temperature%> degress (F). Current conditions: <%=@current_conditions%>.</p>
+        </div>
+    </div>
+
+    <div class="container weatherreport py-4">
       
-        <p>Here is your City: <%=@params["q"]%></p>
-        <p>Here is the lat/long: <%=@lat_long[0]%>, <%=@lat_long[1]%></p>
-        In <%=@params["q"]%>, it is currently <%=@current_temperature%> degress, current conditions: <%=@current_conditions%></p>
-        <p>Extended Forecast:</p>
+          <div class="row">
+              <div class="col-md-12">
+                  <h2>Daily Extended Forecast for <%=@params["q"]%></h2>
+              </div>
+          </div>
+      
+          <div class="row">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>High Temperature (F)</th>
+                  <th>Low Temperature (F)</th>
+                  <th>Conditions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <%for @daily_forecast in @forecast["daily"]["data"] %>
+                    <tr>
+                        <td><%=@daily_forecast["temperatureHigh"]%></td>
+                        <td><%=@daily_forecast["temperatureLow"]%></td>
+                        <td><%=@daily_forecast["summary"]%></td>
+                    </tr>
+                <%end %>
+              </tbody>
+            </table>
+          </div>
 
-        <%for @daily_forecast in @forecast["daily"]["data"] %>
-           <p>A high temperature of <%=@daily_forecast["temperatureHigh"]%> and <%=@daily_forecast["summary"]%></p>
-        <%end %>
+    </div>
 
-        <h2>National News headlines</h2>
-        <p><%=@news["articles"][0]["title"]%></p>
-        <p><a href="<%=@news["articles"][0]["url"]%>">Read more here.</a></p>
-        <p><img src="<%=@news["articles"][0]["urlToImage"]%>"></p>
+    <div class="jumbotron jumbotron-fluid homejumbo">
+            <div class="container  py-4">
+                <h2>Latest National News <i class="fas fa-newspaper"></i></h2>
+                    <p><img class="newsimg" src="<%=@news["articles"][0]["urlToImage"]%>"></p>
+                        <ul class="list-group list-group-flush">
+                            <%for @news_article in @news["articles"]%>
+                                <li class="list-group-item"><a class="newslink" href="<%=@news_article["url"]%>"><%=@news_article["title"]%></a></li>
+                            <%end %>
+                </ul>
+            </div>
+    </div>
 
+    <div class="container footer">
+        <div class="row">
 
+            <div class="col-md-9">
+            </div>
+
+            <div class="col-md-3">
+                <p class="footertext">Barker Media Holdings, 2020</p>
+            </div>
+
+        </div>
     </div>
 
     <!-- Optional JavaScript -->

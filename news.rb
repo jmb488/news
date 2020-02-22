@@ -15,7 +15,9 @@ before { puts "Parameters: #{params}" }
 
 
 get "/" do
+
     view "form"
+    
 end
 
 get "/news" do
@@ -27,21 +29,18 @@ get "/news" do
     @current_conditions = @forecast["currently"]["summary"]
 
     @news = HTTParty.get("https://newsapi.org/v2/top-headlines?country=us&apiKey=968b9313d8624e01b75b1354c0b8858e").parsed_response.to_hash
-    
 
-    #Now for the output
-    #"
+    view "newspaper"
+        
+end
+
+
+#Notes / Pre-work
+    
     #<p>Here is your input: #{params["q"]}</p>
     #<p>Here is the lat/long: #{@lat_long[0]}, #{@lat_long[1]}</p>
     #<p>In #{@params["q"]}, it is currently #{@current_temperature} degress, current conditions: #{@current_conditions}</p>
-    #<p>Extended Forecast:</p>
-    #"
 
-    view "newspaper"
-        #<% for @daily_forecast in @forecast["daily"]["data"] %>
-        #    <p>A high temperature of #{@daily_forecast["temperatureHigh"]} and #{@daily_forecast["summary"]}</p>
-        #<% end %>
-    
-
-    #"you typed #{params["q"]}"
-end
+    #<% for @daily_forecast in @forecast["daily"]["data"] %>
+    #    <p>A high temperature of #{@daily_forecast["temperatureHigh"]} and #{@daily_forecast["summary"]}</p>
+    #<% end %>

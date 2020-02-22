@@ -7,7 +7,7 @@
 
     <!-- Google Fonts -->
     <!-- Swap out "Roboto" for the font(s) you want to use -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli|Roboto+Mono|Work+Sans&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" crossorigin="anonymous">
@@ -22,14 +22,30 @@
   </head>
   <body>
 
-    <div class="container mt-5">
-      <h1>Local Weather and National News</h1>
-      <p>See today's weather and seven-day forecast, as well as the latest national news.</p>
-      <p>Enter your location here:</p>
-      <form action="/news">
-        <input type="text" name="q">
-        <button type="submit">Go</submit>
-      </form>
+    <div class="jumbotron jumbotron-fluid homejumbo">
+        <div class="container">
+            <h1 class="headline">Local Weather and National News</h1>
+            <p class="lead">See today's weather and seven-day forecast, as well as the latest national news.</p>
+            <p class="lead">Enter your location here:</p>
+            <form action="/news">
+                <input type="text" name="q">
+                <button type="submit" class="btn btn-med ask">Go</submit>
+            </form>
+    
+        </div>
+    </div>
+
+    <div class="container footer">
+        <div class="row">
+
+            <div class="col-md-9">
+            </div>
+
+            <div class="col-md-3">
+                <p class="footertext">Barker Media Holdings, 2020</p>
+            </div>
+
+        </div>
     </div>
 
     <!-- Optional JavaScript -->
