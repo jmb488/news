@@ -44,14 +44,16 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>High Temperature (F)</th>
-                  <th>Low Temperature (F)</th>
+                  <th>Day</th>
+                  <th>High (F)</th>
+                  <th>Low (F)</th>
                   <th>Conditions</th>
                 </tr>
               </thead>
               <tbody>
                 <%for @daily_forecast in @forecast["daily"]["data"] %>
                     <tr>
+                        <td><%=Time.at(@daily_forecast["time"]).strftime("%a")%></td>
                         <td><%=@daily_forecast["temperatureHigh"]%></td>
                         <td><%=@daily_forecast["temperatureLow"]%></td>
                         <td><%=@daily_forecast["summary"]%></td>
