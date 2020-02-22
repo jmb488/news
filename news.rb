@@ -18,7 +18,7 @@ get "/" do
     view "form"
 end
 
-get "/map" do
+get "/news" do
   
     results = Geocoder.search(@params["q"])
     @lat_long = results.first.coordinates  # gives [lat, long]

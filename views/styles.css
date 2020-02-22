@@ -1,0 +1,72 @@
+body{
+    font-family: 'Catamaran', sans-serif;
+    font-size:20px;
+}
+
+img.navlogo{
+    height:40px;
+    width:40px;
+}
+
+div.homejumbo{
+    background-attachment: fixed;
+    background-image: url(eagle.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding-top:5rem;
+    padding-bottom:5rem;
+}
+
+
+h1{
+    font-size:3rem;
+    font-family: 'Kanit', sans-serif;
+}
+
+
+h2{
+    font-size:2.5rem;
+    color:darkslategray;
+}
+
+h3{
+    font-family: 'Prompt', sans-serif;
+    max-width:inherit;
+}
+
+img.map{
+    max-width: 100%;
+}
+
+
+img.carouselpic{
+    max-width:100%;
+    max-height:500px;
+}
+
+
+ul.footer{
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    list-style: none;
+}
+
+img.jumbotronimg{
+    max-width:100%;
+    max-height:500px;
+}
+
+
+i.fas{
+    color:goldenrod;
+}
+
+p{
+    padding-top:0.5rem;
+}

@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     
     <!-- Your own CSS -->
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="views/styles.css">
 
     <title>Geocoding</title>
   </head>
@@ -36,6 +36,8 @@
 
         <h2>National News headlines</h2>
         <p><%=@news["articles"][0]["title"]%></p>
+        <p><a href="<%=@news["articles"][0]["url"]%>">Read more here.</a></p>
+        <p><img src="<%=@news["articles"][0]["urlToImage"]%>"></p>
 
 
     </div>
